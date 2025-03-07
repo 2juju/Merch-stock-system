@@ -63,5 +63,6 @@ public class Product {
                 '}';
         // method to return product details
     }
+    // the javadocs thing is so ugly SKULLLLL
 }
 
