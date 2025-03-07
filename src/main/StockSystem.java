@@ -1,4 +1,5 @@
 package main;
+import java.util.Scanner;
 import managers.StockManager;
 import models.Product;
 
@@ -7,18 +8,33 @@ public class StockSystem {
 
         StockManager stockManager = new StockManager();
         // test items
-        Product product1 = new Product("1", "Apple", 10, 0.5);
-        Product product2 = new Product("2", "Banana", 20, 0.3);
-        Product product3 = new Product("3", "Orange", 15, 0.4);
+        Scanner inputObj  = new Scanner(System.in);
 
-        stockManager.addProduct(product1);
-        stockManager.addProduct(product2);
-        stockManager.addProduct(product3);
+        System.out.println("Enter the product id: ");
+        String id = inputObj.nextLine();
+
+        System.out.println("Enter the product name: ");
+        String name = inputObj.nextLine();
+
+        System.out.println("Enter the product quantity: ");
+        int quantity = inputObj.nextInt();
+
+
+        System.out.println("Enter the product price: ");
+        double price = inputObj.nextDouble();
+
+
+        Product product = new Product(id, name, quantity, price);
+        stockManager.addProduct(product);
+
+        System.out.println("Stock list: ");
         stockManager.listProducts();
 
-        Product product = stockManager.searchProductById("2");
-        System.out.println(product);
-        stockManager.removeProduct(product);
-        stockManager.listProducts();
+
+        // Product product = stockManager.searchProductById("");
+        // System.out.println(product);
+        // stockManager.removeProduct(product);
+        // stockManager.listProducts();
+        inputObj.close();
     }
 }
