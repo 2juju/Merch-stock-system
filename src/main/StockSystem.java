@@ -50,3 +50,5 @@ public class StockSystem {
     }
 }
 // TODO: add a search system to pick what to do as a replacement of the gui
+// TODO: add a remove function
+// TODO: make a case sensitive search? or auto fill search
